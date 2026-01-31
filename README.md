@@ -26,7 +26,12 @@ uvx mkdocs-dtinth build
 ## Installation
 
 ### For Users (via uvx)
-No installation needed. Use `uvx mkdocs-dtinth` directly.
+```bash
+# Run directly without installation
+uvx --from git+https://github.com/dtinth/mkdocs-dtinth serve
+uvx --from git+https://github.com/dtinth/mkdocs-dtinth init
+uvx --from git+https://github.com/dtinth/mkdocs-dtinth build
+```
 
 ### For Development
 ```bash
