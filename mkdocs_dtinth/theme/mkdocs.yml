@@ -1,0 +1,10 @@
+site_name: dtinth Docs
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    primary: indigo
+    accent: blue
+  font:
+    text: Roboto
+    code: Roboto Mono

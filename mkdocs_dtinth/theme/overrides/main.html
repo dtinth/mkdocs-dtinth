@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% set palette = [
+  ("primary", "indigo", "300", "400", "600", "700", "50"),
+  ("secondary", "indigo", "300", "400", "600", "700", "50"),
+  ("accent", "blue", "300", "400", "600", "700", "50"),
+] %}
+
+{% macro color(palette_color) -%}
+{% set color = palette | selectattr("0", "equalto", palette_color) | first %}
+{{ color[1] }}-{{ color[2] }} {{ color[0] }}-{{ color[3] }} {{ color[0] }}-{{ color[4] }} {{ color[0] }}-{{ color[5] }} {{ color[0] }}-{{ color[6] }}
+{%- endmacro %}
+
+{% block content %}
+{{ super() }}
+{% endblock %}

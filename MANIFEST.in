@@ -1,0 +1,2 @@
+include mkdocs_dtinth/theme/**
+include pyproject.toml
