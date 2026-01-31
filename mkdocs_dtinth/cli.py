@@ -1,5 +1,4 @@
 import argparse
-import os
 import shutil
 import subprocess
 import sys
@@ -24,7 +23,7 @@ def main():
         help="IP address and port to serve (e.g., 0.0.0.0:8000)",
     )
     subparsers.add_parser("build", help="Build documentation with custom theme")
-    init_parser = subparsers.add_parser("init", help="Create a new project skeleton")
+    subparsers.add_parser("init", help="Create a new project skeleton")
 
     args = parser.parse_args()
 
@@ -39,52 +38,16 @@ def main():
 
 
 def get_theme_dir():
-    pkg_dir = Path(__file__).parent
+    pkg_dir = Path(__file__).parent / "theme"
     local_source = Path("/config/mkdocs-dtinth")
     if (local_source / "pyproject.toml").exists() and (
         local_source / "mkdocs_dtinth" / "theme"
     ).exists():
         return local_source / "mkdocs_dtinth" / "theme"
-    return pkg_dir / "theme"
-
-
-def merge_mkdocs_yml():
-    user_yml = Path("mkdocs.yml")
-    theme_yml = get_theme_dir() / "mkdocs.yml"
-
-    import yaml
-
-    if theme_yml.exists():
-        with open(theme_yml) as f:
-            theme_config = yaml.safe_load(f) or {}
-    else:
-        theme_config = {}
-
-    if user_yml.exists():
-        with open(user_yml) as f:
-            user_config = yaml.safe_load(f) or {}
-    else:
-        user_config = {}
-
-    if "theme" in user_config:
-        theme_config["theme"].update(user_config["theme"])
-    theme_config.update(user_config)
-
-    return theme_config
-
-
-def write_merged_config(config):
-    with open("mkdocs.yml", "w") as f:
-        import yaml
-
-        yaml.dump(config, f, default_flow_style=False)
+    return pkg_dir
 
 
 def run_serve(args):
-    config = merge_mkdocs_yml()
-    config["theme"]["custom_dir"] = str(get_theme_dir() / "overrides")
-    write_merged_config(config)
-
     cmd = ["mkdocs", "serve"]
     if args.dev_addr:
         cmd.extend(["--dev-addr", args.dev_addr])
@@ -92,9 +55,6 @@ def run_serve(args):
 
 
 def run_build():
-    config = merge_mkdocs_yml()
-    config["theme"]["custom_dir"] = str(get_theme_dir() / "overrides")
-    write_merged_config(config)
     subprocess.run(["mkdocs", "build"] + sys.argv[2:], check=True)
 
 
@@ -105,7 +65,15 @@ def run_init():
         print("mkdocs.yml already exists in target directory")
         sys.exit(1)
 
-    shutil.copy(get_theme_dir() / "mkdocs.yml", target / "mkdocs.yml")
+    config = {
+        "site_name": "My Documentation",
+        "theme": {"name": "dtinth"},
+    }
+
+    with open(target / "mkdocs.yml", "w") as f:
+        import yaml
+
+        yaml.dump(config, f, default_flow_style=False)
 
     docs_dir = target / "docs"
     docs_dir.mkdir(exist_ok=True)

@@ -19,3 +19,6 @@ include = ["mkdocs_dtinth*"]
 
 [tool.setuptools.package-data]
 mkdocs_dtinth = ["theme/**/*"]
+
+[project.entry-points.'mkdocs.themes']
+dtinth = "mkdocs_dtinth.theme"
