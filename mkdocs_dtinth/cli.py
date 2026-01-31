@@ -65,8 +65,12 @@ def run_init():
         print("mkdocs.yml already exists in target directory")
         sys.exit(1)
 
+    project_name = get_project_name(target)
+    site_url = f"https://docs.dt.in.th/{project_name}/"
+
     config = {
-        "site_name": "My Documentation",
+        "site_name": project_name,
+        "site_url": site_url,
         "theme": {"name": "dtinth"},
     }
 
@@ -77,9 +81,38 @@ def run_init():
 
     docs_dir = target / "docs"
     docs_dir.mkdir(exist_ok=True)
-    (docs_dir / "index.md").write_text(
-        "# Welcome to MkDocs\n\nThis is your new documentation site.\n"
-    )
+
+    index_file = docs_dir / "index.md"
+    if not index_file.exists():
+        index_file.write_text(
+            "# Welcome to MkDocs\n\nThis is your new documentation site.\n"
+        )
 
     print(f"Project initialized in {target}")
     print("Run 'mkdocs-dtinth serve' to preview your documentation.")
+
+
+def get_project_name(target):
+    try:
+        result = subprocess.run(
+            ["git", "remote", "get-url", "origin"],
+            cwd=target,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        remote_url = result.stdout.strip()
+        if remote_url.startswith("https://"):
+            path = remote_url.replace("https://", "").split("/", 1)[1]
+            if path.endswith(".git"):
+                path = path[:-4]
+            return path
+        elif remote_url.startswith("git@"):
+            path = remote_url.split(":", 1)[1]
+            if path.endswith(".git"):
+                path = path[:-4]
+            return path
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        pass
+
+    return target.resolve().name
