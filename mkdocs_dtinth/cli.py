@@ -15,14 +15,21 @@ def main():
     )
     subparsers = parser.add_subparsers(dest="command")
 
-    subparsers.add_parser("serve", help="Serve documentation with custom theme")
+    serve_parser = subparsers.add_parser(
+        "serve", help="Serve documentation with custom theme"
+    )
+    serve_parser.add_argument(
+        "--dev-addr",
+        type=str,
+        help="IP address and port to serve (e.g., 0.0.0.0:8000)",
+    )
     subparsers.add_parser("build", help="Build documentation with custom theme")
     init_parser = subparsers.add_parser("init", help="Create a new project skeleton")
 
     args = parser.parse_args()
 
     if args.command == "serve":
-        run_serve()
+        run_serve(args)
     elif args.command == "build":
         run_build()
     elif args.command == "init":
@@ -73,11 +80,15 @@ def write_merged_config(config):
         yaml.dump(config, f, default_flow_style=False)
 
 
-def run_serve():
+def run_serve(args):
     config = merge_mkdocs_yml()
     config["theme"]["custom_dir"] = str(get_theme_dir() / "overrides")
     write_merged_config(config)
-    subprocess.run(["mkdocs", "serve"] + sys.argv[2:], check=True)
+
+    cmd = ["mkdocs", "serve"]
+    if args.dev_addr:
+        cmd.extend(["--dev-addr", args.dev_addr])
+    subprocess.run(cmd, check=True)
 
 
 def run_build():
