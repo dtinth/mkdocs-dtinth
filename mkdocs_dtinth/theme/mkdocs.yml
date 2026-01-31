@@ -3,8 +3,9 @@ theme:
   name: material
   custom_dir: overrides
   palette:
-    primary: indigo
-    accent: blue
+    - scheme: dark
+      primary: purple
+      accent: indigo
   font:
     text: Roboto
     code: Roboto Mono

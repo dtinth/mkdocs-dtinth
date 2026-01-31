@@ -32,35 +32,38 @@ def main():
 
 
 def get_theme_dir():
-    return Path(__file__).parent / "theme"
+    pkg_dir = Path(__file__).parent
+    local_source = Path("/config/mkdocs-dtinth")
+    if (local_source / "pyproject.toml").exists() and (
+        local_source / "mkdocs_dtinth" / "theme"
+    ).exists():
+        return local_source / "mkdocs_dtinth" / "theme"
+    return pkg_dir / "theme"
 
 
 def merge_mkdocs_yml():
     user_yml = Path("mkdocs.yml")
     theme_yml = get_theme_dir() / "mkdocs.yml"
 
-    if user_yml.exists() and theme_yml.exists():
-        import yaml
+    import yaml
 
-        with open(user_yml) as f:
-            user_config = yaml.safe_load(f) or {}
+    if theme_yml.exists():
         with open(theme_yml) as f:
             theme_config = yaml.safe_load(f) or {}
-
-        theme_config.update(user_config)
-        return theme_config
-    elif user_yml.exists():
-        import yaml
-
-        with open(user_yml) as f:
-            return yaml.safe_load(f) or {}
-    elif theme_yml.exists():
-        import yaml
-
-        with open(theme_yml) as f:
-            return yaml.safe_load(f) or {}
     else:
-        return {}
+        theme_config = {}
+
+    if user_yml.exists():
+        with open(user_yml) as f:
+            user_config = yaml.safe_load(f) or {}
+    else:
+        user_config = {}
+
+    if "theme" in user_config:
+        theme_config["theme"].update(user_config["theme"])
+    theme_config.update(user_config)
+
+    return theme_config
 
 
 def write_merged_config(config):
