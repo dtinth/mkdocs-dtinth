@@ -1,22 +1,16 @@
 {% extends "base.html" %}
 
-{% set palette = [
-  ("primary", "purple", "300", "400", "600", "700", "50"),
-  ("secondary", "purple", "300", "400", "600", "700", "50"),
-  ("accent", "indigo", "300", "400", "600", "700", "50"),
-] %}
-
-{% macro color(palette_color) -%}
-{% set color = palette | selectattr("0", "equalto", palette_color) | first %}
-{{ color[1] }}-{{ color[2] }} {{ color[0] }}-{{ color[3] }} {{ color[0] }}-{{ color[4] }} {{ color[0] }}-{{ color[5] }} {{ color[0] }}-{{ color[6] }}
-{%- endmacro %}
-
 {% block content %}
 {{ super() }}
 {% endblock %}
 
 {% block styles %}
-{{ super() }}
+<link rel="stylesheet" href="{{ 'assets/stylesheets/main.484c7ddc.min.css' | url }}">
+{% if config.theme.palette %}
+  {% set palette = config.theme.palette %}
+  <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.ab4e12ef.min.css' | url }}">
+{% endif %}
+{% include "partials/icons.html" %}
 <style>
 [data-md-color-scheme="slate"][data-md-color-primary="purple"][data-md-color-accent="indigo"] .md-typeset a {
   color: #ffffbb !important;
@@ -31,4 +25,3 @@
 }
 </style>
 {% endblock %}
-
