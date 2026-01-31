@@ -29,3 +29,4 @@ site/
 htmlcov/
 *.log
 .DS_Store
+.playwright-cli/
