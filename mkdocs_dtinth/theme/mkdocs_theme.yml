@@ -1,9 +1,9 @@
 extends: material
 palette:
   - scheme: slate
-    primary: purple
-    accent: indigo
+    primary: black
+    accent: lime
     toggle: false
 font:
-  text: Roboto
-  code: Roboto Mono
+  text: Arimo
+  code: Arimo

@@ -1,0 +1,81 @@
+/* dtinth's color palette from https://dt.in.th/Colors.md */
+[data-md-color-scheme="slate"] {
+  /* Background colors */
+  --md-default-bg-color: #090807 !important;
+  --md-default-bg-color--light: #252423 !important;
+  --md-default-bg-color--lighter: #353433 !important;
+  --md-default-bg-color--lightest: #454443 !important;
+  
+  /* Text colors */
+  --md-default-fg-color: #e9e8e7 !important;
+  --md-default-fg-color--light: #8b8685 !important;
+  --md-default-fg-color--lighter: #656463 !important;
+  --md-default-fg-color--lightest: #454443 !important;
+  
+  /* Link color - yellow */
+  --md-typeset-a-color: #ffffbb !important;
+  
+  /* Primary/accent colors */
+  --md-primary-fg-color: #090807 !important;
+  --md-primary-bg-color: #e9e8e7 !important;
+  --md-accent-fg-color: #d7fc70 !important;
+}
+
+/* Links */
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #ffffbb !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: #bbeeff !important;
+}
+
+/* Headings - lime green */
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset h4,
+[data-md-color-scheme="slate"] .md-typeset h5,
+[data-md-color-scheme="slate"] .md-typeset h6 {
+  color: #d7fc70 !important;
+}
+
+/* Navigation */
+[data-md-color-scheme="slate"] .md-nav__title {
+  color: #e9e8e7 !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: #e9e8e7 !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: #d7fc70 !important;
+}
+
+/* Code blocks */
+[data-md-color-scheme="slate"] .md-typeset code {
+  background-color: #252423 !important;
+  color: #e9e8e7 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre {
+  background-color: #252423 !important;
+}
+
+/* Tables */
+[data-md-color-scheme="slate"] .md-typeset table {
+  background-color: #252423 !important;
+}
+
+/* Admonitions */
+[data-md-color-scheme="slate"] .md-typeset .admonition {
+  background-color: #252423 !important;
+  border-color: #454443 !important;
+}
+
+/* Search highlight */
+[data-md-color-scheme="slate"] .md-search-result mark {
+  background-color: #d7fc70 !important;
+  color: #090807 !important;
+}
