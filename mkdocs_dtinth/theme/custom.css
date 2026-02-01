@@ -173,11 +173,13 @@
   color: #353433 !important;
 }
 
-/* Header/Nav background */
-[data-md-color-scheme="slate"] .md-header {
-  background-color: #353433 !important;
+/* Header/Nav background - matches dt.in.th header */
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-header.md-header {
+  background-color: #090807 !important;
   color: #e9e8e7 !important;
-  box-shadow: 0 1px 0 #454443 !important;
+  border-bottom: 1px solid #454443 !important;
+  box-shadow: none !important;
 }
 
 /* Sidebar */
