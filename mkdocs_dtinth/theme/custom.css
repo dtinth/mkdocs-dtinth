@@ -20,7 +20,7 @@
   
   /* Primary/accent colors */
   --md-primary-fg-color: #353433 !important;
-  --md-primary-bg-color: #e9e8e7 !important;
+  --md-primary-bg-color: #8b8685 !important;
   --md-accent-fg-color: #d7fc70 !important;
 }
 
@@ -175,11 +175,29 @@
 
 /* Header/Nav background - matches dt.in.th header */
 [data-md-color-scheme="slate"] .md-header,
-[data-md-color-scheme="slate"] .md-header.md-header {
+[data-md-color-scheme="slate"] .md-header.md-header,
+[data-md-color-scheme="slate"].md-header {
   background-color: #090807 !important;
-  color: #e9e8e7 !important;
+  color: #8b8685 !important;
   border-bottom: 1px solid #454443 !important;
   box-shadow: none !important;
+}
+
+/* Header icons and title - gray color (#8b8685) */
+[data-md-color-scheme="slate"] .md-header .md-header__button,
+[data-md-color-scheme="slate"] .md-header .md-header__title,
+[data-md-color-scheme="slate"] .md-header .md-header__topic,
+[data-md-color-scheme="slate"] .md-header .md-icon,
+[data-md-color-scheme="slate"] .md-header svg,
+[data-md-color-scheme="slate"] .md-header__button.md-header__button,
+[data-md-color-scheme="slate"] .md-header__title.md-header__title {
+  color: #8b8685 !important;
+  fill: #8b8685 !important;
+}
+
+[data-md-color-scheme="slate"] .md-header .md-header__button:hover,
+[data-md-color-scheme="slate"] .md-header .md-header__title:hover {
+  color: #e9e8e7 !important;
 }
 
 /* Sidebar */
@@ -203,4 +221,18 @@
 [data-md-color-scheme="slate"] ::selection {
   background-color: #d7fc70 !important;
   color: #353433 !important;
+}
+
+/* OVERRIDE: Header text colors - must be after palette CSS */
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-header.md-header {
+  color: #8b8685 !important;
+}
+[data-md-color-scheme="slate"] .md-header__button,
+[data-md-color-scheme="slate"] .md-header__title,
+[data-md-color-scheme="slate"] .md-header__topic,
+[data-md-color-scheme="slate"] .md-header .md-icon,
+[data-md-color-scheme="slate"] .md-header svg {
+  color: #8b8685 !important;
+  fill: #8b8685 !important;
 }
