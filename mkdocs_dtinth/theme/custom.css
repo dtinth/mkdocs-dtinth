@@ -20,7 +20,7 @@
   
   /* Primary/accent colors */
   --md-primary-fg-color: #353433 !important;
-  --md-primary-bg-color: #8b8685 !important;
+  --md-primary-bg-color: #e9e8e7 !important;
   --md-accent-fg-color: #d7fc70 !important;
 }
 
@@ -41,9 +41,9 @@
   text-decoration: underline !important;
 }
 
-/* H1 - gray color, 36px, black text shadow */
+/* H1 - cyan color (#bbeeff), 36px, black text shadow */
 [data-md-color-scheme="slate"] .md-typeset h1 {
-  color: #8b8685 !important;
+  color: #bbeeff !important;
   font-size: 36px !important;
   font-weight: 600 !important;
   line-height: 1.3 !important;
@@ -223,15 +223,18 @@
   color: #353433 !important;
 }
 
-/* OVERRIDE: Header text colors - must be after palette CSS */
-[data-md-color-scheme="slate"] .md-header,
-[data-md-color-scheme="slate"] .md-header.md-header {
-  color: #8b8685 !important;
+/* OVERRIDE: Header styling to match dt.in.th */
+/* Header text - white (#e9e8e7) - use extreme specificity to beat palette CSS */
+[data-md-color-scheme="slate"] .md-header .md-header__title.md-header__title,
+[data-md-color-scheme="slate"] .md-header .md-header__topic.md-header__topic,
+[data-md-color-scheme="slate"].md-header .md-header__title,
+[data-md-color-scheme="slate"].md-header .md-header__topic {
+  color: #e9e8e7 !important;
 }
-[data-md-color-scheme="slate"] .md-header__button,
-[data-md-color-scheme="slate"] .md-header__title,
-[data-md-color-scheme="slate"] .md-header__topic,
-[data-md-color-scheme="slate"] .md-header .md-icon,
+
+/* Header icons - gray (#8b8685) */
+[data-md-color-scheme="slate"] .md-header .md-header__button.md-header__button,
+[data-md-color-scheme="slate"] .md-header .md-icon.md-icon,
 [data-md-color-scheme="slate"] .md-header svg {
   color: #8b8685 !important;
   fill: #8b8685 !important;
