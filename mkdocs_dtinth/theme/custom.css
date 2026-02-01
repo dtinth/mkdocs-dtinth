@@ -1,10 +1,13 @@
 /* dtinth's website styling from https://dt.in.th */
+
+/* Apply to both :root and data attribute for maximum specificity */
+:root,
 [data-md-color-scheme="slate"] {
-  /* Background colors - from dt.in.th analysis */
-  --md-default-bg-color: #252423 !important;
-  --md-default-bg-color--light: #353433 !important;
-  --md-default-bg-color--lighter: #454443 !important;
-  --md-default-bg-color--lightest: #656463 !important;
+  /* Background colors - main content area is #353433 */
+  --md-default-bg-color: #353433 !important;
+  --md-default-bg-color--light: #454443 !important;
+  --md-default-bg-color--lighter: #656463 !important;
+  --md-default-bg-color--lightest: #8b8685 !important;
   
   /* Text colors */
   --md-default-fg-color: #e9e8e7 !important;
@@ -16,7 +19,7 @@
   --md-typeset-a-color: #8b8685 !important;
   
   /* Primary/accent colors */
-  --md-primary-fg-color: #252423 !important;
+  --md-primary-fg-color: #353433 !important;
   --md-primary-bg-color: #e9e8e7 !important;
   --md-accent-fg-color: #d7fc70 !important;
 }
@@ -167,35 +170,35 @@
 /* Search highlight */
 [data-md-color-scheme="slate"] .md-search-result mark {
   background-color: #d7fc70 !important;
-  color: #252423 !important;
+  color: #353433 !important;
 }
 
 /* Header/Nav background */
 [data-md-color-scheme="slate"] .md-header {
-  background-color: #252423 !important;
+  background-color: #353433 !important;
   color: #e9e8e7 !important;
   box-shadow: 0 1px 0 #454443 !important;
 }
 
 /* Sidebar */
 [data-md-color-scheme="slate"] .md-sidebar {
-  background-color: #252423 !important;
+  background-color: #353433 !important;
 }
 
 /* Tabs */
 [data-md-color-scheme="slate"] .md-tabs {
-  background-color: #252423 !important;
+  background-color: #353433 !important;
   color: #e9e8e7 !important;
 }
 
 /* Footer */
 [data-md-color-scheme="slate"] .md-footer {
-  background-color: #252423 !important;
+  background-color: #353433 !important;
   color: #8b8685 !important;
 }
 
 /* Selection color */
 [data-md-color-scheme="slate"] ::selection {
   background-color: #d7fc70 !important;
-  color: #252423 !important;
+  color: #353433 !important;
 }
