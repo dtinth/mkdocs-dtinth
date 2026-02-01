@@ -1,10 +1,10 @@
-/* dtinth's color palette from https://dt.in.th/Colors.md */
+/* dtinth's website styling from https://dt.in.th */
 [data-md-color-scheme="slate"] {
-  /* Background colors */
-  --md-default-bg-color: #090807 !important;
-  --md-default-bg-color--light: #252423 !important;
-  --md-default-bg-color--lighter: #353433 !important;
-  --md-default-bg-color--lightest: #454443 !important;
+  /* Background colors - from dt.in.th analysis */
+  --md-default-bg-color: #252423 !important;
+  --md-default-bg-color--light: #353433 !important;
+  --md-default-bg-color--lighter: #454443 !important;
+  --md-default-bg-color--lightest: #656463 !important;
   
   /* Text colors */
   --md-default-fg-color: #e9e8e7 !important;
@@ -12,32 +12,52 @@
   --md-default-fg-color--lighter: #656463 !important;
   --md-default-fg-color--lightest: #454443 !important;
   
-  /* Link color - yellow */
-  --md-typeset-a-color: #ffffbb !important;
+  /* Link color - gray on dt.in.th */
+  --md-typeset-a-color: #8b8685 !important;
   
   /* Primary/accent colors */
-  --md-primary-fg-color: #090807 !important;
+  --md-primary-fg-color: #252423 !important;
   --md-primary-bg-color: #e9e8e7 !important;
   --md-accent-fg-color: #d7fc70 !important;
 }
 
-/* Links */
+/* Base styles */
+[data-md-color-scheme="slate"] .md-typeset {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Links - gray color */
 [data-md-color-scheme="slate"] .md-typeset a {
-  color: #ffffbb !important;
+  color: #8b8685 !important;
+  text-decoration: none !important;
 }
 
 [data-md-color-scheme="slate"] .md-typeset a:hover {
-  color: #bbeeff !important;
+  color: #d7fc70 !important;
+  text-decoration: underline !important;
 }
 
-/* Headings - lime green */
-[data-md-color-scheme="slate"] .md-typeset h1,
+/* H1 - gray color (36px on dt.in.th) */
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: #8b8685 !important;
+  font-size: 2.25em !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* H2-H6 - lime green color */
 [data-md-color-scheme="slate"] .md-typeset h2,
 [data-md-color-scheme="slate"] .md-typeset h3,
 [data-md-color-scheme="slate"] .md-typeset h4,
 [data-md-color-scheme="slate"] .md-typeset h5,
 [data-md-color-scheme="slate"] .md-typeset h6 {
   color: #d7fc70 !important;
+  font-weight: 600 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  font-size: 1.75em !important;
 }
 
 /* Navigation */
@@ -53,29 +73,85 @@
   color: #d7fc70 !important;
 }
 
-/* Code blocks */
+/* Code blocks - inline code */
 [data-md-color-scheme="slate"] .md-typeset code {
-  background-color: #252423 !important;
+  background-color: #353433 !important;
   color: #e9e8e7 !important;
+  font-size: 0.9em !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 3px !important;
 }
 
+/* Code blocks - preformatted */
 [data-md-color-scheme="slate"] .md-typeset pre {
-  background-color: #252423 !important;
+  background-color: #353433 !important;
+  border-radius: 6px !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre code {
+  background-color: transparent !important;
+  padding: 0 !important;
 }
 
 /* Tables */
 [data-md-color-scheme="slate"] .md-typeset table {
-  background-color: #252423 !important;
+  background-color: #353433 !important;
+  border-radius: 6px !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset th {
+  background-color: #454443 !important;
+  color: #d7fc70 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset td {
+  border-top: 1px solid #454443 !important;
 }
 
 /* Admonitions */
 [data-md-color-scheme="slate"] .md-typeset .admonition {
-  background-color: #252423 !important;
+  background-color: #353433 !important;
   border-color: #454443 !important;
+  border-radius: 6px !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition-title {
+  background-color: #454443 !important;
+  color: #d7fc70 !important;
 }
 
 /* Search highlight */
 [data-md-color-scheme="slate"] .md-search-result mark {
   background-color: #d7fc70 !important;
-  color: #090807 !important;
+  color: #252423 !important;
+}
+
+/* Header/Nav background */
+[data-md-color-scheme="slate"] .md-header {
+  background-color: #252423 !important;
+  color: #e9e8e7 !important;
+  box-shadow: 0 1px 0 #454443 !important;
+}
+
+/* Sidebar */
+[data-md-color-scheme="slate"] .md-sidebar {
+  background-color: #252423 !important;
+}
+
+/* Tabs */
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #252423 !important;
+  color: #e9e8e7 !important;
+}
+
+/* Footer */
+[data-md-color-scheme="slate"] .md-footer {
+  background-color: #252423 !important;
+  color: #8b8685 !important;
+}
+
+/* Selection color */
+[data-md-color-scheme="slate"] ::selection {
+  background-color: #d7fc70 !important;
+  color: #252423 !important;
 }
