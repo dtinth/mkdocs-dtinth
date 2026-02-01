@@ -28,6 +28,12 @@ mkdocs-dtinth init
 mkdocs-dtinth serve
 ```
 
+**Upgrading to the latest version:**
+
+```bash
+uv tool upgrade mkdocs-dtinth
+```
+
 ### Option 3: Run from local source (for development)
 
 ```bash
