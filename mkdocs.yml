@@ -1,0 +1,7 @@
+site_name: mkdocs-dtinth
+site_url: https://docs.dt.in.th/mkdocs-dtinth/
+theme:
+  name: dtinth
+nav:
+  - Home: index.md
+  - Tutorial: tutorial.md
