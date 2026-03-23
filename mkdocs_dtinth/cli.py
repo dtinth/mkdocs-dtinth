@@ -48,14 +48,14 @@ def get_theme_dir():
 
 
 def run_serve(args):
-    cmd = ["mkdocs", "serve"]
+    cmd = [sys.executable, "-m", "mkdocs", "serve"]
     if args.dev_addr:
         cmd.extend(["--dev-addr", args.dev_addr])
     subprocess.run(cmd, check=True)
 
 
 def run_build():
-    subprocess.run(["mkdocs", "build"] + sys.argv[2:], check=True)
+    subprocess.run([sys.executable, "-m", "mkdocs", "build"] + sys.argv[2:], check=True)
 
 
 def run_init():
