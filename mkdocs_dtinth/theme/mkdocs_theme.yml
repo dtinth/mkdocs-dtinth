@@ -1,9 +1,8 @@
 extends: material
 palette:
-  - scheme: slate
-    primary: black
-    accent: lime
-    toggle: false
+  scheme: dtinth
+  primary: dtinth
+  accent: dtinth
 font:
   text: Arimo
-  code: Arimo
+  code: Cousine

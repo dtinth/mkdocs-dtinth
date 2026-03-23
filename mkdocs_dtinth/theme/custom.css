@@ -1,241 +1,60 @@
-/* dtinth's website styling from https://dt.in.th */
-
-/* Apply to both :root and data attribute for maximum specificity */
-:root,
-[data-md-color-scheme="slate"] {
-  /* Background colors - main content area is #353433 */
-  --md-default-bg-color: #353433 !important;
-  --md-default-bg-color--light: #454443 !important;
-  --md-default-bg-color--lighter: #656463 !important;
-  --md-default-bg-color--lightest: #8b8685 !important;
-  
-  /* Text colors */
-  --md-default-fg-color: #e9e8e7 !important;
-  --md-default-fg-color--light: #8b8685 !important;
-  --md-default-fg-color--lighter: #656463 !important;
-  --md-default-fg-color--lightest: #454443 !important;
-  
-  /* Link color - gray on dt.in.th */
-  --md-typeset-a-color: #8b8685 !important;
-  
-  /* Primary/accent colors */
-  --md-primary-fg-color: #353433 !important;
-  --md-primary-bg-color: #e9e8e7 !important;
-  --md-accent-fg-color: #d7fc70 !important;
+[data-md-color-scheme="dtinth"] {
+  --md-default-fg-color: hsla(var(--md-hue), 15%, 90%, 0.82);
+  --md-default-fg-color--light: hsla(var(--md-hue), 15%, 90%, 0.56);
+  --md-default-fg-color--lighter: hsla(var(--md-hue), 15%, 90%, 0.32);
+  --md-default-fg-color--lightest: hsla(var(--md-hue), 15%, 90%, 0.12);
+  --md-default-bg-color: hsla(var(--md-hue), 15%, 14%, 1);
+  --md-default-bg-color--light: hsla(var(--md-hue), 15%, 14%, 0.54);
+  --md-default-bg-color--lighter: hsla(var(--md-hue), 15%, 14%, 0.26);
+  --md-default-bg-color--lightest: hsla(var(--md-hue), 15%, 14%, 0.07);
+  --md-code-fg-color: hsla(var(--md-hue), 18%, 86%, 0.82);
+  --md-code-bg-color: hsla(var(--md-hue), 15%, 18%, 1);
+  --md-code-bg-color--light: hsla(var(--md-hue), 15%, 18%, 0.9);
+  --md-code-bg-color--lighter: hsla(var(--md-hue), 15%, 18%, 0.54);
+  --md-code-hl-color: #2977ff;
+  --md-code-hl-color--light: #2977ff1a;
+  --md-code-hl-number-color: #e6695b;
+  --md-code-hl-special-color: #f06090;
+  --md-code-hl-function-color: #c973d9;
+  --md-code-hl-constant-color: #9383e2;
+  --md-code-hl-keyword-color: #6791e0;
+  --md-code-hl-string-color: #2fb170;
+  --md-code-hl-name-color: var(--md-code-fg-color);
+  --md-code-hl-operator-color: var(--md-default-fg-color--light);
+  --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
+  --md-code-hl-comment-color: var(--md-default-fg-color--light);
+  --md-code-hl-generic-color: var(--md-default-fg-color--light);
+  --md-code-hl-variable-color: var(--md-default-fg-color--light);
+  --md-typeset-color: var(--md-default-fg-color);
+  --md-typeset-a-color: var(--md-primary-fg-color);
+  --md-typeset-kbd-color: hsla(var(--md-hue), 15%, 90%, 0.12);
+  --md-typeset-kbd-accent-color: hsla(var(--md-hue), 15%, 90%, 0.2);
+  --md-typeset-kbd-border-color: hsla(var(--md-hue), 15%, 14%, 1);
+  --md-typeset-mark-color: #4287ff4d;
+  --md-typeset-table-color: hsla(var(--md-hue), 15%, 95%, 0.12);
+  --md-typeset-table-color--light: hsla(var(--md-hue), 15%, 95%, 0.035);
+  --md-admonition-fg-color: var(--md-default-fg-color);
+  --md-admonition-bg-color: var(--md-default-bg-color);
+  --md-footer-bg-color: hsla(var(--md-hue), 15%, 10%, 0.87);
+  --md-footer-bg-color--dark: hsla(var(--md-hue), 15%, 8%, 1);
+  --md-shadow-z1: 0 0.2rem 0.5rem #0000000d, 0 0 0.05rem #0000001a;
+  --md-shadow-z2: 0 0.2rem 0.5rem #00000040, 0 0 0.05rem #00000040;
+  --md-shadow-z3: 0 0.2rem 0.5rem #0006, 0 0 0.05rem #00000059;
+  color-scheme: dark;
 }
-
-/* Base styles */
-[data-md-color-scheme="slate"] .md-typeset {
-  font-size: 0.85rem;
-  line-height: 1.6;
+[data-md-color-accent="dtinth"] {
+  --md-accent-fg-color: #f50056;
+  --md-accent-fg-color--transparent: #f500561a;
+  --md-accent-bg-color: #fff;
+  --md-accent-bg-color--light: #ffffffb3;
 }
-
-/* Links - gray color */
-[data-md-color-scheme="slate"] .md-typeset a {
-  color: #8b8685 !important;
-  text-decoration: none !important;
+[data-md-color-scheme="dtinth"][data-md-color-primary="dtinth"] {
+  --md-typeset-a-color: #ed5487;
 }
-
-[data-md-color-scheme="slate"] .md-typeset a:hover {
-  color: #d7fc70 !important;
-  text-decoration: underline !important;
-}
-
-/* H1 - cyan color (#bbeeff), 36px, black text shadow */
-[data-md-color-scheme="slate"] .md-typeset h1 {
-  color: #bbeeff !important;
-  font-size: 36px !important;
-  font-weight: 600 !important;
-  line-height: 1.3 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0.5em !important;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.25) !important;
-}
-
-/* H2 - lime green, 24px, lime text shadow */
-[data-md-color-scheme="slate"] .md-typeset h2 {
-  color: #d7fc70 !important;
-  font-size: 24px !important;
-  font-weight: 600 !important;
-  line-height: 1.4 !important;
-  margin-top: 1.5em !important;
-  margin-bottom: 0.5em !important;
-  text-shadow: 2px 2px rgba(215, 252, 112, 0.15) !important;
-}
-
-/* H3 - pink color, 1.25em, black text shadow */
-[data-md-color-scheme="slate"] .md-typeset h3 {
-  color: #febfea !important;
-  font-size: 1.25em !important;
-  font-weight: 600 !important;
-  line-height: 1.5 !important;
-  margin-top: 1.6em !important;
-  margin-bottom: 0.6em !important;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.25) !important;
-}
-
-/* H4-H6 - inherit from base */
-[data-md-color-scheme="slate"] .md-typeset h4,
-[data-md-color-scheme="slate"] .md-typeset h5,
-[data-md-color-scheme="slate"] .md-typeset h6 {
-  color: #e9e8e7 !important;
-  font-weight: 600 !important;
-  margin-top: 1.5em !important;
-  margin-bottom: 0.5em !important;
-}
-
-/* Table of Contents (TOC) - grayish text */
-[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__title {
-  color: #656463 !important;
-  font-size: 0.75rem !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-}
-
-[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link {
-  color: #8b8685 !important;
-  font-size: 0.75rem !important;
-  margin-top: 0.25em !important;
-}
-
-[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link--active {
-  color: #d7fc70 !important;
-}
-
-[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link:hover {
-  color: #e9e8e7 !important;
-}
-
-/* Primary Navigation */
-[data-md-color-scheme="slate"] .md-nav__title {
-  color: #e9e8e7 !important;
-}
-
-[data-md-color-scheme="slate"] .md-nav__link {
-  color: #e9e8e7 !important;
-}
-
-[data-md-color-scheme="slate"] .md-nav__link--active {
-  color: #d7fc70 !important;
-}
-
-/* Code blocks - inline code */
-[data-md-color-scheme="slate"] .md-typeset code {
-  background-color: #353433 !important;
-  color: #e9e8e7 !important;
-  font-size: 0.9em !important;
-  padding: 0.2em 0.4em !important;
-  border-radius: 3px !important;
-}
-
-/* Code blocks - preformatted */
-[data-md-color-scheme="slate"] .md-typeset pre {
-  background-color: #353433 !important;
-  border-radius: 6px !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset pre code {
-  background-color: transparent !important;
-  padding: 0 !important;
-}
-
-/* Tables */
-[data-md-color-scheme="slate"] .md-typeset table {
-  background-color: #353433 !important;
-  border-radius: 6px !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset th {
-  background-color: #454443 !important;
-  color: #d7fc70 !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset td {
-  border-top: 1px solid #454443 !important;
-}
-
-/* Admonitions */
-[data-md-color-scheme="slate"] .md-typeset .admonition {
-  background-color: #353433 !important;
-  border-color: #454443 !important;
-  border-radius: 6px !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset .admonition-title {
-  background-color: #454443 !important;
-  color: #d7fc70 !important;
-}
-
-/* Search highlight */
-[data-md-color-scheme="slate"] .md-search-result mark {
-  background-color: #d7fc70 !important;
-  color: #353433 !important;
-}
-
-/* Header/Nav background - matches dt.in.th header */
-[data-md-color-scheme="slate"] .md-header,
-[data-md-color-scheme="slate"] .md-header.md-header,
-[data-md-color-scheme="slate"].md-header {
-  background-color: #090807 !important;
-  color: #8b8685 !important;
-  border-bottom: 1px solid #454443 !important;
-  box-shadow: none !important;
-}
-
-/* Header icons and title - gray color (#8b8685) */
-[data-md-color-scheme="slate"] .md-header .md-header__button,
-[data-md-color-scheme="slate"] .md-header .md-header__title,
-[data-md-color-scheme="slate"] .md-header .md-header__topic,
-[data-md-color-scheme="slate"] .md-header .md-icon,
-[data-md-color-scheme="slate"] .md-header svg,
-[data-md-color-scheme="slate"] .md-header__button.md-header__button,
-[data-md-color-scheme="slate"] .md-header__title.md-header__title {
-  color: #8b8685 !important;
-  fill: #8b8685 !important;
-}
-
-[data-md-color-scheme="slate"] .md-header .md-header__button:hover,
-[data-md-color-scheme="slate"] .md-header .md-header__title:hover {
-  color: #e9e8e7 !important;
-}
-
-/* Sidebar */
-[data-md-color-scheme="slate"] .md-sidebar {
-  background-color: #353433 !important;
-}
-
-/* Tabs */
-[data-md-color-scheme="slate"] .md-tabs {
-  background-color: #353433 !important;
-  color: #e9e8e7 !important;
-}
-
-/* Footer */
-[data-md-color-scheme="slate"] .md-footer {
-  background-color: #353433 !important;
-  color: #8b8685 !important;
-}
-
-/* Selection color */
-[data-md-color-scheme="slate"] ::selection {
-  background-color: #d7fc70 !important;
-  color: #353433 !important;
-}
-
-/* OVERRIDE: Header styling to match dt.in.th */
-/* Header text - white (#e9e8e7) - use extreme specificity to beat palette CSS */
-[data-md-color-scheme="slate"] .md-header .md-header__title.md-header__title,
-[data-md-color-scheme="slate"] .md-header .md-header__topic.md-header__topic,
-[data-md-color-scheme="slate"].md-header .md-header__title,
-[data-md-color-scheme="slate"].md-header .md-header__topic {
-  color: #e9e8e7 !important;
-}
-
-/* Header icons - gray (#8b8685) */
-[data-md-color-scheme="slate"] .md-header .md-header__button.md-header__button,
-[data-md-color-scheme="slate"] .md-header .md-icon.md-icon,
-[data-md-color-scheme="slate"] .md-header svg {
-  color: #8b8685 !important;
-  fill: #8b8685 !important;
+[data-md-color-primary="dtinth"] {
+  --md-primary-fg-color: #e92063;
+  --md-primary-fg-color--light: #ec417a;
+  --md-primary-fg-color--dark: #c3185d;
+  --md-primary-bg-color: #fff;
+  --md-primary-bg-color--light: #ffffffb3;
 }
