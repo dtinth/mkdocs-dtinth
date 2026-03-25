@@ -81,6 +81,21 @@
   }
   & .md-header {
     background-color: #090807;
+    color: #8b8685;
+  }
+  & .md-header--shadow {
+    box-shadow: 0 1px 0 #454443;
+  }
+  & .md-header__inner {
+    min-height: 57px;
+  }
+  & .md-nav {
+    transition: 0.2s opacity;
+    opacity: 0.5;
+    &:hover,
+    &:focus-within {
+      opacity: 1;
+    }
   }
   & .md-grid {
     /* Target main content area size is 848px. See: https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#content-area-width */
