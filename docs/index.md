@@ -1,41 +1,35 @@
 # mkdocs-dtinth
 
-A reusable MkDocs distribution with dtinth's custom dark theme.
+A reusable MkDocs distribution with dtinth's custom dark theme based on Material for MkDocs.
 
-## What is this?
-
-**mkdocs-dtinth** is a custom MkDocs setup that you can use across multiple projects via `uvx`. It provides:
-
-- **Dark theme** with dtinth's color palette
-- **Arimo font** for both text and code
-- **Easy setup** - just one command to initialize
-- **Zero configuration** - works out of the box
-
-## Quick Start
+## Kitchen Sink
 
 ```bash
-# Run directly without installation
+# Init project
 uvx --from git+https://github.com/dtinth/mkdocs-dtinth mkdocs-dtinth init
+
+# Serve docs
 uvx --from git+https://github.com/dtinth/mkdocs-dtinth mkdocs-dtinth serve
 ```
 
-## Features
+### Table
 
-### Color Scheme
-- **Background:** #090807 (very dark)
-- **Text:** #e9e8e7 (light gray)
-- **Links:** #ffffbb (light yellow)
-- **Headings:** #d7fc70 (lime green)
-- **Code blocks:** #252423 (dark gray)
+| Command               | Description                     |
+| --------------------- | ------------------------------- |
+| `mkdocs-dtinth init`  | Initialize a new project        |
+| `mkdocs-dtinth serve` | Serve current directory as docs |
+| `mkdocs-dtinth build` | Build for production            |
 
-### Typography
-- **Font:** Arimo (Google Font)
-- **Code:** Arimo Mono
+### Unordered list
 
-## Learn More
+- `mkdocs-dtinth init`: Initialize a new project
+- `mkdocs-dtinth serve`: Serve current directory as docs
+- `mkdocs-dtinth build`: Build for production
 
-See the [Tutorial](tutorial.md) for a complete walkthrough of creating documentation for your project.
+### Ordered list
 
-## License
+1. `mkdocs-dtinth init`: Initialize a new project
+2. `mkdocs-dtinth serve`: Serve current directory as docs
+3. `mkdocs-dtinth build`: Build for production
 
-MIT
+# Modified
