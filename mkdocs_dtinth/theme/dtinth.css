@@ -1,12 +1,24 @@
 [data-md-color-scheme="dtinth"] {
-  --md-default-fg-color: hsla(var(--md-hue), 15%, 90%, 0.82);
-  --md-default-fg-color--light: hsla(var(--md-hue), 15%, 90%, 0.56);
-  --md-default-fg-color--lighter: hsla(var(--md-hue), 15%, 90%, 0.32);
-  --md-default-fg-color--lightest: hsla(var(--md-hue), 15%, 90%, 0.12);
-  --md-default-bg-color: hsla(var(--md-hue), 15%, 14%, 1);
-  --md-default-bg-color--light: hsla(var(--md-hue), 15%, 14%, 0.54);
-  --md-default-bg-color--lighter: hsla(var(--md-hue), 15%, 14%, 0.26);
-  --md-default-bg-color--lightest: hsla(var(--md-hue), 15%, 14%, 0.07);
+  --md-default-fg-color: #e9e8e7;
+  --md-default-fg-color--light: #e9e8e79a;
+  --md-default-fg-color--lighter: #e9e8e752;
+  --md-default-fg-color--lightest: #e9e8e71f;
+  --md-default-bg-color: #353433;
+  --md-default-bg-color--light: color-mix(
+    in srgb,
+    var(--md-default-bg-color) 54%,
+    transparent
+  );
+  --md-default-bg-color--lighter: color-mix(
+    in srgb,
+    var(--md-default-bg-color) 26%,
+    transparent
+  );
+  --md-default-bg-color--lightest: color-mix(
+    in srgb,
+    var(--md-default-bg-color) 7%,
+    transparent
+  );
   --md-code-fg-color: hsla(var(--md-hue), 18%, 86%, 0.82);
   --md-code-bg-color: hsla(var(--md-hue), 15%, 18%, 1);
   --md-code-bg-color--light: hsla(var(--md-hue), 15%, 18%, 0.9);
@@ -49,7 +61,7 @@
   --md-accent-bg-color--light: #ffffffb3;
 }
 [data-md-color-scheme="dtinth"][data-md-color-primary="dtinth"] {
-  --md-typeset-a-color: #ed5487;
+  --md-typeset-a-color: #ffb;
 }
 [data-md-color-primary="dtinth"] {
   --md-primary-fg-color: #e92063;
@@ -57,4 +69,33 @@
   --md-primary-fg-color--dark: #c3185d;
   --md-primary-bg-color: #fff;
   --md-primary-bg-color--light: #ffffffb3;
+}
+
+[data-md-color-scheme="dtinth"] {
+  html:has(&) {
+    /* Target font size is 16px, but Material for MkDocs displays main text at 0.8rem, so we need to increase the font size to 20px to make it 16px. */
+    font-size: 20px;
+  }
+  & .md-header {
+    background-color: #090807;
+  }
+  & .md-grid {
+    /* Target main content area size is 848px. See: https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#content-area-width */
+    max-width: 69rem;
+  }
+  & .md-typeset {
+    letter-spacing: 0.01em;
+    & h2 {
+      color: #d7fc70;
+      text-shadow: 2px 2px #d7fc7026;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    & h3 {
+      color: #febfea;
+      text-shadow: 2px 2px #00000040;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+  }
 }

@@ -6,7 +6,5 @@
 
 {% block styles %}
 {{ super() }}
-<style>
-{% include "custom.css" %}
-</style>
+<link rel="stylesheet" href="{{ 'dtinth.css' | url }}">
 {% endblock %}
