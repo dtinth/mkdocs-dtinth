@@ -48,7 +48,7 @@ def get_theme_dir():
 
 
 def run_serve(args):
-    cmd = [sys.executable, "-m", "mkdocs", "serve"]
+    cmd = [sys.executable, "-m", "mkdocs", "serve", "--livereload"]
     if args.dev_addr:
         cmd.extend(["--dev-addr", args.dev_addr])
     subprocess.run(cmd, check=True)

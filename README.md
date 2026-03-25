@@ -2,28 +2,27 @@
 
 A reusable MkDocs distribution with dtinth's custom dark theme, designed for use across multiple projects via `uvx`.
 
-## Usage
+## Commands
 
 ```bash
-# Run directly without installation
-uvx mkdocs-dtinth init    # Initialize a new project
-uvx mkdocs-dtinth serve   # Serve current directory as docs
-uvx mkdocs-dtinth build   # Build for production
+# Run directly from GitHub
+uvx --from git+https://github.com/dtinth/mkdocs-dtinth mkdocs-dtinth build
+
+# Install dependencies
+uv sync
+
+# Develop and test commands locally
+uv run mkdocs-dtinth init    # Initialize a new project
+uv run mkdocs-dtinth serve   # Serve current directory as docs (or Cmd+Shift+B)
+uv run mkdocs-dtinth build   # Build for production
+
+# Install as global command
+uv tool install -e . --reinstall
+
+# Use the commands in other projects
+mkdocs-dtinth init
+mkdocs-dtinth serve
 ```
-
-Or install from GitHub:
-
-```bash
-uvx --from git+https://github.com/dtinth/mkdocs-dtinth init
-```
-
-## Development
-
-```bash
-pip install -e /config/mkdocs-dtinth
-```
-
-See [AGENTS.md](AGENTS.md) for build commands and guidelines.
 
 ## License
 

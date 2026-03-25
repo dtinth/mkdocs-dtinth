@@ -8,7 +8,12 @@ version = "0.1.0"
 description = "MkDocs with custom dtinth theme"
 readme = "README.md"
 requires-python = ">=3.8"
-dependencies = ["mkdocs", "pyyaml", "mkdocs-material"]
+dependencies = [
+    "mkdocs",
+    "pyyaml",
+    "mkdocs-material",
+    "watchdog>=4.0.2",
+]
 
 [project.scripts]
 mkdocs-dtinth = "mkdocs_dtinth.cli:main"

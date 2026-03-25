@@ -4,4 +4,3 @@ theme:
   name: dtinth
 nav:
   - Home: index.md
-  - Tutorial: tutorial.md
