@@ -31,5 +31,3 @@ uvx --from git+https://github.com/dtinth/mkdocs-dtinth mkdocs-dtinth serve
 1. `mkdocs-dtinth init`: Initialize a new project
 2. `mkdocs-dtinth serve`: Serve current directory as docs
 3. `mkdocs-dtinth build`: Build for production
-
-# Modified
